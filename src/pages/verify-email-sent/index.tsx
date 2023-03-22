@@ -145,7 +145,7 @@ export default function VerifyEmailSent() {
                     </div>
                     <Title>Control</Title>
                     <Description>
-                      Controlyour data and privacy settings
+                      Control your data and privacy settings
                     </Description>
                   </CardContent>
                 </CardActionArea>

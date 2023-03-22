@@ -4,6 +4,7 @@ import { refresher, signin } from "../features/auth/authSlice";
 // import BrandLoader from "../utils/loaders/BrandLoader";
 import { ToastContainer } from "react-toastify";
 import { useGetUserQuery } from "../features/api/authApi";
+import { Box } from "@mui/material";
 
 type PageWrapperProps = {
   children: React.ReactNode;
@@ -81,7 +82,19 @@ const PageWrapper = (props: PageWrapperProps) => {
       <div>
         <ToastContainer />
       </div>
-      {!refresh && <h1>Loading</h1>}
+      {!refresh && (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 9999,
+            backgroundColor: "white",
+          }}
+        >
+          Loading
+        </Box>
+      )}
 
       {children}
     </>
