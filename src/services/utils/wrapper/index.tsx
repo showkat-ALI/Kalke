@@ -91,6 +91,9 @@ const PageWrapper = (props: PageWrapperProps) => {
             alignItems: "center",
             zIndex: 9999,
             backgroundColor: "white",
+            position: "fixed",
+            width: "100vw",
+            height: "100vh",
           }}
         >
           <CircularProgress />
