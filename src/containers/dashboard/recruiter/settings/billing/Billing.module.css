@@ -1,0 +1,20 @@
+.billingCard {
+  background: #ffffff;
+  border: "1px solid #ECEFF1";
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.billingCard:hover {
+  background: #0071cd;
+}
+
+.billingCard:hover * {
+  color: #ffffff !important;
+}
+
+.billingCard:hover .button {
+  background: #fff !important;
+  color: #455964 !important;
+  font-weight: 600;
+}

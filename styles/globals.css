@@ -1,0 +1,54 @@
+@import "~react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+:root {
+  --primaryColor: #008fff;
+  --secondaryColor: #ffffff;
+  --primaryTextColor: #90a3ae;
+  --secondaryTextColor: #253237;
+  --generalDashBoardBG: #f2faff;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html {
+    color-scheme: light;
+  }
+  body {
+    color: black;
+    background: white;
+  }
+}
+.checkbox-wrapper {
+  /* removing default appearance */
+  /* creating a custom design */
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 0.15em;
+  border: 0.15em solid #546d7a;
+  cursor: pointer;
+}
+.image-container {
+  width: 50vw;
+  height: 50vh;
+  position: relative;
+}
+.image-container .image {
+  width: 100%;
+  height: 100%;
+  position: relative !important;
+  object-fit: cover;
+}
