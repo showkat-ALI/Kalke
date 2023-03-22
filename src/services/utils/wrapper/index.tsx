@@ -5,6 +5,7 @@ import { refresher, signin } from "../features/auth/authSlice";
 import { ToastContainer } from "react-toastify";
 import { useGetUserQuery } from "../features/api/authApi";
 import { Box } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 
 type PageWrapperProps = {
   children: React.ReactNode;
@@ -92,7 +93,8 @@ const PageWrapper = (props: PageWrapperProps) => {
             backgroundColor: "white",
           }}
         >
-          Loading
+          <CircularProgress />
+          Loading...
         </Box>
       )}
 
