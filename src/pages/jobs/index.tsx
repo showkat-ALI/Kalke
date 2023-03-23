@@ -1,5 +1,5 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
 import styled from "@emotion/styled";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";

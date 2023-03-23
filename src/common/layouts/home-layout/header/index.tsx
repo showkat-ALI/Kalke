@@ -98,7 +98,7 @@ import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import { Button } from "@mui/material";
 import Image from "next/image";
 import kalkeLogo from "@images/kalke-logo.png";
 import KalkeTextButton from "@buttons/kalke-text-button";
