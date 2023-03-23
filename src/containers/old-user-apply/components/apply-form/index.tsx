@@ -1,24 +1,8 @@
 import KalkeTextButton from "@buttons/kalke-text-button";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import {
-  alpha,
-  Box,
-  FormControl,
-  InputBase,
-  InputLabel,
-  styled,
-  TextField,
-  Typography,
-  Avatar,
-  InputAdornment,
-} from "@mui/material";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton/IconButton";
+import { Box, Typography, Avatar, Button } from "@mui/material";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import DoneIcon from "@mui/icons-material/Done";
 import React, { useState } from "react";
-import { height } from "@mui/system";
 import googlelogo from "../../../../assets/Images/random.png";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 export default function ApplyForm() {

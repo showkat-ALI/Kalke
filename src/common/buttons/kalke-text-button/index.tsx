@@ -1,5 +1,4 @@
-import { ThemeProvider, Typography } from "@mui/material";
-import Button from "@mui/material/Button/Button";
+import { ThemeProvider, Typography, Button } from "@mui/material";
 import React from "react";
 import { CustomTheme } from "../../../../styles/style";
 

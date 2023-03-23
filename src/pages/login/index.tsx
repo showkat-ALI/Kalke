@@ -1,5 +1,4 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -17,6 +16,7 @@ import footerImgSheba from "./imgs/sheba.png";
 import footerImgLoop from "./imgs/loop.png";
 import footerImgShikho from "./imgs/shikho.png";
 import lineImg from "./imgs/line.png";
+import { Button } from "@mui/material";
 import headerImg from "./imgs/logo.png";
 import { useRouter } from "next/router";
 import { ROUTES } from "src/common/routes";
