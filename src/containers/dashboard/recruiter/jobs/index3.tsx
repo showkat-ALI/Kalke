@@ -16,7 +16,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import Box from "@mui/material/Box";
+import { Box, IconButton } from "@mui/material";
 import { KalkeTabPanel } from "../../../../common/components/kalke-tab-panel/index";
 import DetailTabContent from "./jobs-details/components/detail-tab-content";
 import HiringTeamContent from "./jobs-details/components/hiring-team-content";
@@ -26,7 +26,6 @@ import Divider from "@mui/material/Divider";
 import TablePanelKalke from "@components/tab-panel";
 import { useRouter } from "next/router";
 import PipelineViewMain from "./index1";
-import IconButton from "@mui/material";
 const JobDetailsHeader = styled.div`
   display: flex;
   justify-content: start;
