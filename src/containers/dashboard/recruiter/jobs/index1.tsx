@@ -5,7 +5,6 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
-import IconButton from "@mui/material/IconButton";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShareIcon from "@mui/icons-material/Share";
@@ -23,7 +22,7 @@ import Box from "@mui/material/Box";
 import PipelineTableView from "../../../pipeline/pipeline-Table/PipelineTableView";
 
 import PipelineListView from "../../../pipeline/pipeline-list-view/index";
-import { InputBase, Button } from "@mui/material";
+import { InputBase, Button, IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { useRouter } from "next/router";
 

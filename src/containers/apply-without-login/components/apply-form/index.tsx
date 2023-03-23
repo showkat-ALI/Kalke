@@ -11,10 +11,9 @@ import {
   TextField,
   Typography,
   Avatar,
-  InputAdornment,
+  Button,
+  IconButton,
 } from "@mui/material";
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton/IconButton";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import DoneIcon from "@mui/icons-material/Done";
 import React, { useState } from "react";

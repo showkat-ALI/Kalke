@@ -11,8 +11,8 @@ import {
   TextField,
   Typography,
   InputAdornment,
+  IconButton,
 } from "@mui/material";
-import IconButton from "@mui/material/IconButton/IconButton";
 import React, { useState } from "react";
 
 export default function ApplyForm() {

@@ -1,12 +1,10 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
-import IconButton from "@mui/material/IconButton";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShareIcon from "@mui/icons-material/Share";
@@ -24,7 +22,7 @@ import HiringTeamContent from "./components/hiring-team-content";
 import HiringProcessContent from "./components/hiring-process-content";
 import InternalNotesContent from "./components/internal-notes-content";
 import Divider from "@mui/material/Divider";
-
+import { IconButton, Button } from "@mui/material";
 const JobDetailsHeader = styled.div`
   display: flex;
   justify-content: start;

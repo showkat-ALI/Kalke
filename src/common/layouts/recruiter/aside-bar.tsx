@@ -7,7 +7,6 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import CssBaseline from "@mui/material/CssBaseline";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -31,7 +30,7 @@ import { CustomTheme } from "../../../../styles/style";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
 import { ThemeProvider } from "@mui/material/styles";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
-import { Collapse, ListItemText } from "@mui/material";
+import { Collapse, ListItemText, IconButton } from "@mui/material";
 import {
   AccountBalanceOutlined,
   BusinessOutlined,

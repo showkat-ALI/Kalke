@@ -6,7 +6,6 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "next/link";
 import Typography from "@mui/material/Typography";
 import styled from "@emotion/styled";
-import IconButton from "@mui/material/IconButton";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShareIcon from "@mui/icons-material/Share";
@@ -27,6 +26,7 @@ import Divider from "@mui/material/Divider";
 import TablePanelKalke from "@components/tab-panel";
 import { useRouter } from "next/router";
 import PipelineViewMain from "./index1";
+import IconButton from "@mui/material";
 const JobDetailsHeader = styled.div`
   display: flex;
   justify-content: start;
