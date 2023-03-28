@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import BillingComponent from "@containers/dashboard/recruiter/settings/billing";
+// import BillingComponent from "@containers/dashboard/recruiter/settings/billing";
 
 export default function Billing() {
   return (
@@ -10,7 +10,8 @@ export default function Billing() {
         <title>Recruiter | Kalke</title>
       </Head>
       <RecruiterLayout>
-        <BillingComponent />
+        {/* <BillingComponent /> */}
+        billin
       </RecruiterLayout>
     </>
   );
