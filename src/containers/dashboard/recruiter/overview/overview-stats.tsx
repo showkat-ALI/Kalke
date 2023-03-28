@@ -5,14 +5,18 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import PersonPinRoundedIcon from "@mui/icons-material/PersonPinRounded";
 import { CustomTheme } from "../../../../../styles/style";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-export default function overviewStats() {
+import { useAppSelector } from "src/app/hooks";
+export default function OverviewStats() {
+  const { fullName, email, role, token } = useAppSelector(
+    (state) => state.auth.user
+  );
   return (
     <ThemeProvider theme={CustomTheme}>
       <Box sx={{ mt: "15px" }}>
         <Typography
           sx={{ fontSize: "24px", fontWeight: 600, color: "#253237" }}
         >
-          Good Morning, Sabbir
+          Good Morning,{fullName}
         </Typography>
         <Box
           sx={{
@@ -26,21 +30,21 @@ export default function overviewStats() {
           {[
             {
               title: "Total Candidates",
-              number: 12,
-              increment: 12,
+              number: 14,
+              increment: 111,
               logo: PersonPinRoundedIcon,
               id: 0,
             },
             {
               title: "New assesments",
-              number: 12,
+              number: 15,
               increment: 12,
               logo: AssignmentIcon,
               id: 1,
             },
             {
               title: "Upcoming Interviews",
-              number: 12,
+              number: 13,
               increment: 0,
               logo: CoPresentIcon,
               id: 2,

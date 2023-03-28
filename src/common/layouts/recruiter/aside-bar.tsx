@@ -38,6 +38,7 @@ import {
   ExpandMore,
 } from "@mui/icons-material";
 import SettingsIcon from "@mui/icons-material/Settings";
+import Link from "next/link";
 
 const drawerWidth = 260;
 
@@ -254,7 +255,7 @@ export default function AsideBar({
             </Box>
             <List sx={{ paddingTop: 0, paddingBottom: 0 }}>
               {[
-                { name: "Overview", id: 0, url: "/dashboard/recruiter/" },
+                { name: "Overview", id: 0, url: "/dashboard/recruiter" },
                 {
                   name: "Jobs",
                   id: 1,
@@ -292,113 +293,119 @@ export default function AsideBar({
                   notification: "1",
                 },
               ].map((option, index) => (
-                <ListItem
-                  // component={Link}
-                  key={index}
-                  onClick={(e) => {
-                    router.push(option?.url);
-                    setSelectedItem(option.id);
-                    setSelectedSubOption("");
-                    setSettingsOpen(false);
-                    // e.preventDefault();
-                  }}
-                  disablePadding
-                  sx={{
-                    display: "block",
-                    backgroundColor:
-                      selectedItem === option?.id ? "primary.main" : "inherit",
-                    marginBottom: selectedItem === option?.id ? 0.6 : 0.6,
-                    borderTopRightRadius:
-                      selectedItem === option?.id ? "10px" : 0,
-                    borderBottomRightRadius:
-                      selectedItem === option?.id ? "10px" : 0,
-                    boxShadow:
-                      selectedItem == option?.id
-                        ? " 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
-                        : "",
-                  }}
-                >
-                  <ListItemButton
-                    sx={{
-                      maxheight: 44,
-                      justifyContent: open ? "space-between" : "center",
-                      px: 2.5,
-                    }}
-                  >
-                    <Box sx={{ display: "flex" }}>
-                      <ListItemIcon
+                <div key={index}>
+                  <Link href={option.url} passHref>
+                    <ListItem
+                      // component={Link}
+                      key={index}
+                      onClick={(e) => {
+                        // router.push(option?.url);
+                        // e.preventDefault();
+                        setSelectedItem(option.id);
+                        // setSelectedSubOption("");
+                        // setSettingsOpen(false);
+                      }}
+                      disablePadding
+                      sx={{
+                        display: "block",
+                        backgroundColor:
+                          selectedItem === option?.id
+                            ? "primary.main"
+                            : "inherit",
+                        marginBottom: selectedItem === option?.id ? 0.6 : 0.6,
+                        borderTopRightRadius:
+                          selectedItem === option?.id ? "10px" : 0,
+                        borderBottomRightRadius:
+                          selectedItem === option?.id ? "10px" : 0,
+                        boxShadow:
+                          selectedItem == option?.id
+                            ? " 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
+                            : "",
+                      }}
+                    >
+                      <ListItemButton
                         sx={{
-                          minWidth: 0,
-                          mr: open ? "15px" : "auto",
-                          justifyContent: "center",
-                          color:
-                            selectedItem === option?.id
-                              ? "white"
-                              : "secondary.main",
+                          maxheight: 44,
+                          justifyContent: open ? "space-between" : "center",
+                          px: 2.5,
                         }}
                       >
-                        {index === 0 ? (
-                          <GridViewRoundedIcon />
-                        ) : index === 1 ? (
-                          <WorkOutlineIcon />
-                        ) : index === 2 ? (
-                          <PeopleAltOutlinedIcon />
-                        ) : index === 3 ? (
-                          <ChatOutlinedIcon />
-                        ) : index === 4 ? (
-                          <CalendarMonthOutlinedIcon />
-                        ) : index === 5 ? (
-                          <AssignmentOutlinedIcon />
-                        ) : index === 6 ? (
-                          <StoreMallDirectoryOutlinedIcon />
-                        ) : (
-                          ""
-                        )}
-                      </ListItemIcon>
-                      {open ? (
-                        <Typography
-                          sx={{
-                            opacity: open ? 1 : 0,
-                            fontSize: "0.875rem",
-                            fontWeight: 500,
-                          }}
-                          color={
-                            selectedItem === option?.id
-                              ? "secondary.contrastText"
-                              : "secondary.main"
-                          }
-                        >
-                          {option.name}
-                        </Typography>
-                      ) : (
-                        ""
-                      )}
-                    </Box>
+                        <Box sx={{ display: "flex" }}>
+                          <ListItemIcon
+                            sx={{
+                              minWidth: 0,
+                              mr: open ? "15px" : "auto",
+                              justifyContent: "center",
+                              color:
+                                selectedItem === option?.id
+                                  ? "white"
+                                  : "secondary.main",
+                            }}
+                          >
+                            {index === 0 ? (
+                              <GridViewRoundedIcon />
+                            ) : index === 1 ? (
+                              <WorkOutlineIcon />
+                            ) : index === 2 ? (
+                              <PeopleAltOutlinedIcon />
+                            ) : index === 3 ? (
+                              <ChatOutlinedIcon />
+                            ) : index === 4 ? (
+                              <CalendarMonthOutlinedIcon />
+                            ) : index === 5 ? (
+                              <AssignmentOutlinedIcon />
+                            ) : index === 6 ? (
+                              <StoreMallDirectoryOutlinedIcon />
+                            ) : (
+                              ""
+                            )}
+                          </ListItemIcon>
+                          {open ? (
+                            <Typography
+                              sx={{
+                                opacity: open ? 1 : 0,
+                                fontSize: "0.875rem",
+                                fontWeight: 500,
+                              }}
+                              color={
+                                selectedItem === option?.id
+                                  ? "secondary.contrastText"
+                                  : "secondary.main"
+                              }
+                            >
+                              {option.name}
+                            </Typography>
+                          ) : (
+                            ""
+                          )}
+                        </Box>
 
-                    {option.notification && (
-                      <Box
-                        sx={{
-                          display: open ? "flex" : "none",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          color: "white",
-                          borderRadius: "50%",
-                          backgroundColor: "#F2FAFF",
-                          width: "25px",
-                          height: "25px",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            color: "#037BFD",
-                          }}
-                        >
-                          {option.notification}
-                        </Typography>
-                      </Box>
-                    )}
-                  </ListItemButton>
-                </ListItem>
+                        {option.notification && (
+                          <Box
+                            sx={{
+                              display: open ? "flex" : "none",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              color: "white",
+                              borderRadius: "50%",
+                              backgroundColor: "#F2FAFF",
+                              width: "25px",
+                              height: "25px",
+                            }}
+                          >
+                            <Typography
+                              sx={{
+                                color: "#037BFD",
+                              }}
+                            >
+                              {option.notification}
+                            </Typography>
+                          </Box>
+                        )}
+                      </ListItemButton>
+                    </ListItem>
+                  </Link>
+                </div>
               ))}
             </List>
 
@@ -598,79 +605,6 @@ export default function AsideBar({
                     )}
                   </Fragment>
                 ))}
-              </List>
-            </Box>
-
-            <Box>
-              <List
-                sx={{ paddingTop: 0, paddingBottom: 0, marginBottom: "-12px" }}
-              >
-                {[
-                  {
-                    name: "Settings",
-                    id: 10,
-                    url: "/dashboard/recruiter/settings",
-                  },
-                  {
-                    name: "Help",
-                    id: 11,
-                    url: "/dashboard/recruiter/help",
-                  },
-                ].map(
-                  (
-                    option: { name: string; id: number; url: string },
-                    index
-                  ) => (
-                    <ListItem
-                      key={index}
-                      disablePadding
-                      sx={{ display: "block" }}
-                      onClick={(e) => {
-                        router.push(option?.url);
-                        setSelectedItem(option.id);
-                        // e.preventDefault();
-                      }}
-                    >
-                      <ListItemButton
-                        sx={{
-                          minHeight: 48,
-                          justifyContent: open ? "space-between" : "center",
-                          px: 2.5,
-                        }}
-                      >
-                        <Box sx={{ display: "flex" }}>
-                          <ListItemIcon
-                            sx={{
-                              minWidth: 0,
-                              mr: open ? "15px" : "auto",
-                              justifyContent: "center",
-                            }}
-                          >
-                            {index === 0 ? (
-                              <SettingsOutlinedIcon />
-                            ) : index === 1 ? (
-                              <HelpOutlineOutlinedIcon />
-                            ) : (
-                              ""
-                            )}
-                          </ListItemIcon>
-                          {open && (
-                            <Typography
-                              sx={{
-                                opacity: open ? 1 : 0,
-
-                                fontSize: "14px",
-                                fontWeight: 500,
-                              }}
-                            >
-                              {option.name}
-                            </Typography>
-                          )}
-                        </Box>
-                      </ListItemButton>
-                    </ListItem>
-                  )
-                )}
               </List>
             </Box>
           </Box>

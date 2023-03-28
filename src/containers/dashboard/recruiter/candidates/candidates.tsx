@@ -1,24 +1,8 @@
-import {
-  Box,
-  Button,
-  FormControl,
-  Grid,
-  InputAdornment,
-  InputLabel,
-  MenuItem,
-  Pagination,
-  Select,
-  TextField,
-  Rating,
-  Typography,
-  InputBase,
-  IconButton,
-} from "@mui/material";
+import { Box, Pagination, Typography } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 
 import { useState } from "react";
-import { Container } from "@mui/system";
 import Candidate from "./single-cadidate";
 import { ThemeProvider } from "@emotion/react";
 import { CustomTheme } from "../../../../../styles/style";

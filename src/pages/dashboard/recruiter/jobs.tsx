@@ -1,16 +1,15 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import Account from "@containers/dashboard/recruiter/settings/account";
-
-export default function AccountPage() {
+import JobsComponents from "@containers/dashboard/recruiter/jobs";
+export default function Jobs() {
   return (
     <>
       <Head>
-        <title>Recruiter | Account</title>
+        <title>Recruiter | Kalke</title>
       </Head>
       <RecruiterLayout>
-        <Account />
+        <JobsComponents />
       </RecruiterLayout>
     </>
   );

@@ -1,16 +1,16 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import Account from "@containers/dashboard/recruiter/settings/account";
+import BillingComponent from "@containers/dashboard/recruiter/settings/billing";
 
-export default function AccountPage() {
+export default function Billing() {
   return (
     <>
       <Head>
-        <title>Recruiter | Account</title>
+        <title>Recruiter | Kalke</title>
       </Head>
       <RecruiterLayout>
-        <Account />
+        <BillingComponent />
       </RecruiterLayout>
     </>
   );
