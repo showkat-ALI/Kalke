@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import InviteUsers from "@containers/dashboard/recruiter/team/InviteUsers";
+// import InviteUsers from "@containers/dashboard/recruiter/team/InviteUsers";
 
 export default function InviteTeamMembers() {
   return (
@@ -10,7 +10,8 @@ export default function InviteTeamMembers() {
         <title>Recruiter | Team</title>
       </Head>
       <RecruiterLayout>
-        <InviteUsers />
+        {/* <InviteUsers /> */}
+        invite url
       </RecruiterLayout>
     </>
   );

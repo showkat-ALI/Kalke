@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import SettingsComponents from "@containers/dashboard/recruiter/settings";
+// import SettingsComponents from "@containers/dashboard/recruiter/settings";
 
 export default function Settings() {
   return (
@@ -10,7 +10,8 @@ export default function Settings() {
         <title>Recruiter | Kalke</title>
       </Head>
       <RecruiterLayout>
-        <SettingsComponents />
+        {/* <SettingsComponents /> */}
+        setting
       </RecruiterLayout>
     </>
   );

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import RecruiterLayout from "@layouts/recruiter-layout";
-import TeamComponents from "@containers/dashboard/recruiter/team/team";
+// import TeamComponents from "@containers/dashboard/recruiter/team/team";
 export default function Team() {
   return (
     <>
@@ -9,7 +9,8 @@ export default function Team() {
         <title>Recruiter | Team</title>
       </Head>
       <RecruiterLayout>
-        <TeamComponents />
+        {/* <TeamComponents /> */}
+        team
       </RecruiterLayout>
     </>
   );
