@@ -23,7 +23,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 // import Account from "@containers/dashboard/recruiter/settings/account";
 
 const RecruiterLayout: React.FC<ICommon> = ({ children }) => {
-  const [selectedItem, setSelectedItem] = useState(0);
+  const [selectedItem, setSelectedItem] = useState("/dashboard/recruiter");
   const [selectedSubOption, setSelectedSubOption] = useState(0);
 
   const [secondRow, setSecondRow] = useState(0);

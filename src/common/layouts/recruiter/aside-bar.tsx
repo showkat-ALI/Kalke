@@ -1,30 +1,36 @@
 import React, { Fragment, useState } from "react";
 import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import MuiDrawer from "@mui/material/Drawer";
+
 import { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import CssBaseline from "@mui/material/CssBaseline";
-import Typography from "@mui/material/Typography";
-import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
+import {
+  Box,
+  Toolbar,
+  List,
+  CssBaseline,
+  Typography,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+} from "@mui/material";
+import MuiDrawer from "@mui/material/Drawer";
+
 import kat from "../../../pages/signup/imgs/logo.png";
 import Image from "next/image";
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
-import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
-import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
-import StoreMallDirectoryOutlinedIcon from "@mui/icons-material/StoreMallDirectoryOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import {
+  SettingsOutlined,
+  PersonOutlineOutlined,
+  StoreMallDirectoryOutlined,
+  AssignmentOutlined,
+  CalendarMonthOutlined,
+  ChatOutlined,
+  PeopleAltOutlined,
+  WorkOutline,
+  Menu,
+  HelpOutlineOutlined,
+  ChevronLeft,
+  ChevronRight,
+} from "@mui/icons-material";
+
 import { useRouter } from "next/router";
 import { CustomTheme } from "../../../../styles/style";
 import GridViewRoundedIcon from "@mui/icons-material/GridViewRounded";
@@ -37,7 +43,6 @@ import {
   ExpandLess,
   ExpandMore,
 } from "@mui/icons-material";
-import SettingsIcon from "@mui/icons-material/Settings";
 import Link from "next/link";
 
 const drawerWidth = 260;
@@ -147,6 +152,7 @@ export default function AsideBar({
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  const { route } = router;
 
   return (
     <ThemeProvider theme={CustomTheme}>
@@ -175,7 +181,7 @@ export default function AsideBar({
                 ...(open && { display: "none", backgroundColor: "inherit" }),
               }}
             >
-              <MenuIcon />
+              <Menu />
             </IconButton>
           </Toolbar>
         </MenuBox>
@@ -224,10 +230,10 @@ export default function AsideBar({
             >
               {theme.direction === "rtl" ? (
                 <>
-                  <ChevronRightIcon />
+                  <ChevronRight />
                 </>
               ) : (
-                <ChevronLeftIcon />
+                <ChevronLeft />
               )}
             </IconButton>
           </DrawerHeader>
@@ -271,7 +277,7 @@ export default function AsideBar({
                 {
                   name: "Inbox",
                   id: 3,
-                  url: "/dashboard/recruiter/inbox",
+                  url: "/dashboard/recruiter",
                   notification: "1",
                 },
                 {
@@ -293,119 +299,113 @@ export default function AsideBar({
                   notification: "1",
                 },
               ].map((option, index) => (
-                <div key={index}>
-                  <Link href={option.url} passHref>
-                    <ListItem
-                      // component={Link}
-                      key={index}
-                      onClick={(e) => {
-                        // router.push(option?.url);
-                        // e.preventDefault();
-                        setSelectedItem(option.id);
-                        // setSelectedSubOption("");
-                        // setSettingsOpen(false);
-                      }}
-                      disablePadding
-                      sx={{
-                        display: "block",
-                        backgroundColor:
-                          selectedItem === option?.id
-                            ? "primary.main"
-                            : "inherit",
-                        marginBottom: selectedItem === option?.id ? 0.6 : 0.6,
-                        borderTopRightRadius:
-                          selectedItem === option?.id ? "10px" : 0,
-                        borderBottomRightRadius:
-                          selectedItem === option?.id ? "10px" : 0,
-                        boxShadow:
-                          selectedItem == option?.id
-                            ? " 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
-                            : "",
-                      }}
-                    >
-                      <ListItemButton
+                <>
+                  {console.log(option.url)}
+                  <div key={index}>
+                    <Link href={option.url}>
+                      <ListItem
+                        // component={Link}
+                        key={index}
+                        disablePadding
                         sx={{
-                          maxheight: 44,
-                          justifyContent: open ? "space-between" : "center",
-                          px: 2.5,
+                          display: "block",
+                          backgroundColor:
+                            option.url === route ? "primary.main" : "inherit",
+                          marginBottom: option.url === route ? 0.6 : 0.6,
+                          borderTopRightRadius:
+                            option.url === route ? "10px" : 0,
+                          borderBottomRightRadius:
+                            option.url === route ? "10px" : 0,
+                          boxShadow:
+                            option.url === route
+                              ? " 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
+                              : "",
                         }}
                       >
-                        <Box sx={{ display: "flex" }}>
-                          <ListItemIcon
-                            sx={{
-                              minWidth: 0,
-                              mr: open ? "15px" : "auto",
-                              justifyContent: "center",
-                              color:
-                                selectedItem === option?.id
-                                  ? "white"
-                                  : "secondary.main",
-                            }}
-                          >
-                            {index === 0 ? (
-                              <GridViewRoundedIcon />
-                            ) : index === 1 ? (
-                              <WorkOutlineIcon />
-                            ) : index === 2 ? (
-                              <PeopleAltOutlinedIcon />
-                            ) : index === 3 ? (
-                              <ChatOutlinedIcon />
-                            ) : index === 4 ? (
-                              <CalendarMonthOutlinedIcon />
-                            ) : index === 5 ? (
-                              <AssignmentOutlinedIcon />
-                            ) : index === 6 ? (
-                              <StoreMallDirectoryOutlinedIcon />
+                        <ListItemButton
+                          sx={{
+                            maxHeight: 44,
+                            justifyContent: open ? "space-between" : "center",
+                            px: 2.5,
+                          }}
+                        >
+                          <Box sx={{ display: "flex" }}>
+                            <ListItemIcon
+                              sx={{
+                                minWidth: 0,
+                                mr: open ? "15px" : "auto",
+                                justifyContent: "center",
+                                color:
+                                  option.url === route
+                                    ? "white"
+                                    : "secondary.main",
+                              }}
+                            >
+                              {index === 0 ? (
+                                <GridViewRoundedIcon />
+                              ) : index === 1 ? (
+                                <WorkOutline />
+                              ) : index === 2 ? (
+                                <PeopleAltOutlined />
+                              ) : index === 3 ? (
+                                <ChatOutlined />
+                              ) : index === 4 ? (
+                                <CalendarMonthOutlined />
+                              ) : index === 5 ? (
+                                <AssignmentOutlined />
+                              ) : index === 6 ? (
+                                <StoreMallDirectoryOutlined />
+                              ) : (
+                                ""
+                              )}
+                            </ListItemIcon>
+                            {open ? (
+                              <Typography
+                                sx={{
+                                  opacity: open ? 1 : 0,
+                                  fontSize: "0.875rem",
+                                  fontWeight: 500,
+                                }}
+                                color={
+                                  option.url === route
+                                    ? "secondary.contrastText"
+                                    : "secondary.main"
+                                }
+                              >
+                                {option.name}
+                              </Typography>
                             ) : (
                               ""
                             )}
-                          </ListItemIcon>
-                          {open ? (
-                            <Typography
-                              sx={{
-                                opacity: open ? 1 : 0,
-                                fontSize: "0.875rem",
-                                fontWeight: 500,
-                              }}
-                              color={
-                                selectedItem === option?.id
-                                  ? "secondary.contrastText"
-                                  : "secondary.main"
-                              }
-                            >
-                              {option.name}
-                            </Typography>
-                          ) : (
-                            ""
-                          )}
-                        </Box>
-
-                        {option.notification && (
-                          <Box
-                            sx={{
-                              display: open ? "flex" : "none",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              color: "white",
-                              borderRadius: "50%",
-                              backgroundColor: "#F2FAFF",
-                              width: "25px",
-                              height: "25px",
-                            }}
-                          >
-                            <Typography
-                              sx={{
-                                color: "#037BFD",
-                              }}
-                            >
-                              {option.notification}
-                            </Typography>
                           </Box>
-                        )}
-                      </ListItemButton>
-                    </ListItem>
-                  </Link>
-                </div>
+
+                          {option.notification && (
+                            <Box
+                              sx={{
+                                display: open ? "flex" : "none",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                color: "white",
+                                borderRadius: "50%",
+                                backgroundColor: "#F2FAFF",
+                                width: "25px",
+                                height: "25px",
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  color: "#037BFD",
+                                }}
+                              >
+                                {option.notification}
+                              </Typography>
+                            </Box>
+                          )}
+                        </ListItemButton>
+                      </ListItem>
+                    </Link>
+                  </div>
+                </>
               ))}
             </List>
 
@@ -418,7 +418,7 @@ export default function AsideBar({
                     url: "/dashboard/recruiter/settings",
                     more: true,
                     collapse: true,
-                    icon: <SettingsOutlinedIcon />,
+                    icon: <SettingsOutlined />,
                   },
                   {
                     name: "Logout",
@@ -440,14 +440,11 @@ export default function AsideBar({
                       sx={{
                         display: "block",
                         backgroundColor:
-                          selectedItem === option?.id
-                            ? "primary.main"
-                            : "inherit",
-                        marginBottom: selectedItem === option?.id ? 0.6 : 0.6,
-                        borderTopRightRadius:
-                          selectedItem === option?.id ? "10px" : 0,
+                          option.url === route ? "primary.main" : "inherit",
+                        marginBottom: option.url === route ? 0.6 : 0.6,
+                        borderTopRightRadius: option.url === route ? "10px" : 0,
                         borderBottomRightRadius:
-                          selectedItem === option?.id ? "10px" : 0,
+                          option.url === route ? "10px" : 0,
                         boxShadow:
                           selectedItem == option?.id
                             ? " 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)"
@@ -456,7 +453,7 @@ export default function AsideBar({
                     >
                       <ListItemButton
                         sx={{
-                          maxheight: 44,
+                          maxHeight: 44,
                           justifyContent: open ? "space-between" : "center",
                           px: 2.5,
                         }}
@@ -468,7 +465,7 @@ export default function AsideBar({
                               mr: open ? "15px" : "auto",
                               justifyContent: "center",
                               color:
-                                selectedItem === option?.id
+                                option.url === route
                                   ? "white"
                                   : "secondary.main",
                             }}
@@ -484,7 +481,7 @@ export default function AsideBar({
                                 fontWeight: 500,
                               }}
                               color={
-                                selectedItem === option?.id
+                                option.url === route
                                   ? "secondary.contrastText"
                                   : "secondary.main"
                               }
@@ -528,7 +525,7 @@ export default function AsideBar({
                               mr: open ? "0px" : "auto",
                               justifyContent: "center",
                               color:
-                                selectedItem === option?.id
+                                option.url === route
                                   ? "white"
                                   : "secondary.main",
                             }}
@@ -562,7 +559,7 @@ export default function AsideBar({
                               name: "Team",
                               id: 8,
                               url: "/recruiter/settings/team",
-                              icon: <PeopleAltOutlinedIcon />,
+                              icon: <PeopleAltOutlined />,
                             },
                             {
                               name: "Billing",
@@ -574,7 +571,7 @@ export default function AsideBar({
                               name: "Account",
                               id: 10,
                               url: "/recruiter/settings/account",
-                              icon: <PersonOutlineOutlinedIcon />,
+                              icon: <PersonOutlineOutlined />,
                             },
                           ].map((item, index: number) => (
                             <ListItemButton
