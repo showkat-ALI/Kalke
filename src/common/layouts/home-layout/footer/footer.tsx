@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import React from "react";
+import rippling from "../../../../assets/Images/rippling/rippling.png";
 
 export default function Footer() {
   return (
@@ -35,7 +36,7 @@ export default function Footer() {
           }}
         >
           <Box>
-            <Image width={100} height={60} src={"/kalke-logo.png"} alt="" />
+            <Image width={100} height={60} src={rippling} alt="" />
             <Typography sx={{ my: "10px", color: "#546D7A" }}>
               Maximize your reach and hiring success by posting <br /> your job
               ad to 10+ job search sites within one tool <br /> and with one

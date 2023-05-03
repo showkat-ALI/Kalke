@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import MuiDrawer from "@mui/material/Drawer";
 
-import kat from "../../../pages/signup/imgs/logo.png";
+import rippling from "../../../assets/Images/rippling/rippling.png";
 import Image from "next/image";
 import {
   SettingsOutlined,
@@ -26,7 +26,6 @@ import {
   PeopleAltOutlined,
   WorkOutline,
   Menu,
-  HelpOutlineOutlined,
   ChevronLeft,
   ChevronRight,
 } from "@mui/icons-material";
@@ -206,7 +205,7 @@ export default function AsideBar({
               }}
             >
               <Image
-                src={kat}
+                src={rippling}
                 alt=""
                 style={{
                   cursor: "pointer",
@@ -300,7 +299,6 @@ export default function AsideBar({
                 },
               ].map((option, index) => (
                 <>
-                  {console.log(option.url)}
                   <div key={index}>
                     <Link href={option.url}>
                       <ListItem

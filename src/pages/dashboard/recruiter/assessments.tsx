@@ -7,6 +7,7 @@ export default function Assessments() {
       <Head>
         <title>Recruiter | Kalke</title>
       </Head>
+
       <RecruiterLayout>assessments</RecruiterLayout>
     </>
   );

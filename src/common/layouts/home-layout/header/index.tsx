@@ -1,89 +1,3 @@
-// import KalkeTextButton from "@buttons/kalke-text-button";
-// import { Box, Container } from "@mui/material";
-// import Image from "next/image";
-// import Link from "next/link";
-// // import kalkeLogo from "@images/kalke-logo.png";
-
-// export default function Header() {
-//   return (
-//     <Container
-//       sx={{
-//         backgroundColor: "white",
-//         display: "flex",
-//         justifyContent: "space-between",
-//         alignItems: "center",
-//       }}
-//     >
-//       <Box
-//         sx={{
-//           display: "flex",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//         }}
-//       >
-//         <Link href="/">
-//           <Image width={120} height={60} alt="" src={"/kalke-logo.png"} />
-//         </Link>
-
-//         <Box
-//           sx={{
-//             display: "flex",
-//             justifyContent: "space-between",
-//             alignItems: "center",
-//             color: "#607D8A",
-//             ml: "60px",
-//             fontWeight: 600,
-//           }}
-//         >
-//           <Link href={"#"}>Why</Link>
-//           <Box sx={{ ml: "20px" }}>
-//             <Link href={"#"}>Product</Link>
-//           </Box>
-//           <Box sx={{ ml: "20px" }}>
-//             <Link href={"#"}>Company</Link>
-//           </Box>
-//           <Box sx={{ ml: "20px" }}>
-//             <Link href={"#"}>Resources</Link>
-//           </Box>
-//         </Box>
-//       </Box>
-//       <Box
-//         sx={{
-//           display: "flex",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//         }}
-//       >
-//         <Box>
-//           <KalkeTextButton
-//             text={"Get started free"}
-//             sx={{
-//               backgroundColor: "#008FFF",
-//               color: "white",
-//               px: "16px",
-//               py: "8px",
-//               fontWeight: 600,
-//             }}
-//           />
-//         </Box>
-//         <Box sx={{ ml: "10px  " }}>
-//           <KalkeTextButton
-//             text={"Sign in"}
-//             type="outlined"
-//             sx={{
-//               backgroundColor: "#F2FAFF",
-//               color: "#037BFD",
-//               px: "16px",
-//               py: "8px",
-//               fontWeight: 600,
-//             }}
-//           />
-//         </Box>
-//       </Box>
-//     </Container>
-//   );
-// }
-
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -101,9 +15,11 @@ import Typography from "@mui/material/Typography";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import kalkeLogo from "@images/kalke-logo.png";
+import rippling from "../../../../assets/Images/rippling/rippling.png";
 import KalkeTextButton from "@buttons/kalke-text-button";
 import Link from "next/link";
-
+import { useAppSelector } from "src/app/hooks";
+import Profile from "@layouts/recruiter/profile";
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -143,7 +59,16 @@ export default function Header(props: Props) {
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
-
+  const {
+    profilePicture,
+    isBanned,
+    emailVerified,
+    id,
+    fullName,
+    email,
+    role,
+    token,
+  } = useAppSelector((state) => state.auth.user);
   return (
     <Box sx={{ display: "flex", mb: "80px" }}>
       <CssBaseline />
@@ -188,7 +113,7 @@ export default function Header(props: Props) {
               }}
             >
               <Link href="/">
-                <Image width={120} height={60} alt="" src={"/kalke-logo.png"} />
+                <Image width={90} height={50} alt="" src={rippling} />
               </Link>
             </Box>
             <Box
@@ -221,27 +146,33 @@ export default function Header(props: Props) {
               },
             }}
           >
-            <KalkeTextButton
-              variant="contained"
-              text={"Get started free"}
-              sx={{
-                backgroundColor: "#008FFF",
-                color: "white",
-                px: "16px",
-                py: "8px",
-                fontWeight: 600,
-              }}
-            />
-            <KalkeTextButton
-              text={"Sign in"}
-              variant="outlined"
-              sx={{
-                px: "16px",
-                py: "8px",
-                ml: "20px",
-                fontWeight: 600,
-              }}
-            />
+            {token ? (
+              <Profile />
+            ) : (
+              <>
+                <KalkeTextButton
+                  variant="contained"
+                  text={"Get started free"}
+                  sx={{
+                    backgroundColor: "#008FFF",
+                    color: "white",
+                    px: "16px",
+                    py: "8px",
+                    fontWeight: 600,
+                  }}
+                />
+                <KalkeTextButton
+                  text={"Sign in"}
+                  variant="outlined"
+                  sx={{
+                    px: "16px",
+                    py: "8px",
+                    ml: "20px",
+                    fontWeight: 600,
+                  }}
+                />
+              </>
+            )}
           </Box>
           <IconButton
             color="inherit"

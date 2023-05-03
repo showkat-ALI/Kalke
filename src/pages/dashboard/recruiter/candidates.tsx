@@ -6,7 +6,7 @@ export default function Candidates() {
   return (
     <>
       <Head>
-        <title>Recruiter | Kalke</title>
+        <title>Recruiter | Rippling</title>
       </Head>
       <RecruiterLayout>
         <CandidatesComponent />

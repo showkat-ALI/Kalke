@@ -306,8 +306,8 @@ export default function JobsTab() {
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
           <TableBody>
-            {rows.map((row) => (
-              <Row key={row.name} row={row} />
+            {rows.map((row, idx) => (
+              <Row key={idx} row={row} />
             ))}
           </TableBody>
         </Table>
